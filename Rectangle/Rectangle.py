@@ -22,17 +22,23 @@ class Rectangle:
             print('* ' * self.width)
             for _ in range(self.height - 2):
                 print('*' + ' ' * (2 * self.width - 3) + '*')
-                print('* ' * self.width)
+                
+            print('* ' * self.width)
 
 
 def main():
     print(" Welcome to the Rectangle Calculator ")
 
-    height = float(input("Enter the height of your rectangle: "))
-    width = float(input("Enter the width of your rectangle: "))
+    while True:
+        height = float(input("Enter the height of your rectangle: "))
+        width = float(input("Enter the width of your rectangle: "))
 
-    rect = Rectangle(height, width)
-    rect.display()
+        rect = Rectangle(height, width)
+        rect.display()
 
+        choice = input("\nWould you like to continue? (y/n): ").strip().lower()
+        if choice != 'y':
+           print(" Thank you for using the Rectangle Calculator. ")
+           break
 if __name__=="__main__":
     main()
