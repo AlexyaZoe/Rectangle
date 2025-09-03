@@ -8,18 +8,23 @@ class Rectangle:
         return self.height * self.width
     def display(self):
         print("\nRectangle Calculator Details:")
-        print(f"Height: {self.height}")
-        print(f"Width : {self.width}")
-        print(f"Perimeter: {self.perimeter()}")
-        print(f"Area : {self.area()}")
+        print(f"Height:     {self.height}")
+        print(f"Width :     {self.width}")
+        print(f"Perimeter:  {self.perimeter()}")
+        print(f"Area :      {self.area()}")
+        
+        if self.height == 1:
+            print('* ' * self.width)
+        elif self.width == 1:
+            for _ in range(self.height):
+                print('*')
+        else:
+            print('* ' * self.width)
+            for _ in range(self.height - 2):
+                print('*' + ' ' * (2 * self.width - 3) + '*')
+                print('* ' * self.width)
 
-        print("Rectangle Calculator Shape:")
 
-        for row in range(self.height):
-            if row == 0 or row == self.height - 1:
-                print('*' * self.width * 2)
-            else:
-                print('*' + ' ' * ((self.width - 2)  * 2) + '*')
 def main():
     print(" Welcome to the Rectangle Calculator ")
 
