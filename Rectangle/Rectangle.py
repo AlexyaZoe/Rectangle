@@ -15,11 +15,11 @@ class Rectangle:
 
         print("Rectangle Calculator Shape:")
 
-        for row in range(int(self.height)):
+        for row in range(self.height):
             if row == 0 or row == self.height - 1:
-                print('*' * self.width)
+                print('*' * self.width * 2)
             else:
-                print('*' + ' ' * (2 * self.width - 3) + '*')
+                print('*' + ' ' * ((self.width - 2)  * 2) + '*')
 def main():
     print(" Welcome to the Rectangle Calculator ")
 
